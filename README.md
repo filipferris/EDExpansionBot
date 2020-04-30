@@ -1,2 +1,2 @@
-# eliteDangerousFactionData
-Utility functons and bots to assist in the game Elite:Dangerous
+# EDExpansionBot
+Finds expanding systems and expansion targets for Elite:Dangerous 
