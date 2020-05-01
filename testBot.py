@@ -2,17 +2,16 @@ import os
 from dotenv import load_dotenv
 import factionData
 import findExpandingSystems
-
 from pprint import pformat
-
 from discord.ext import commands
+
+expansionBotApp = Flask(__name__)
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TESTBOT_TOKEN')
 
 
 bot = commands.Bot(command_prefix='#',case_insensitive=True)
-
 
 @bot.command(name='FET',
 help='<baseSystem> - Find Expansion Targets around the <baseSystem>')
