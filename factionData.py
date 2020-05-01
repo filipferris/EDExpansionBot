@@ -18,13 +18,13 @@ def getDataFromEDDB(url, file):
     with open(file,'w') as localDataFile:
         data = webRequest.text
         localDataFile.write(data)
-        return data
-
+        logging.info('File retrieved from EDDB')
 
 def readLocalData(fileName):
         localDataFile = open(fileName,'r')
         data = json.load(localDataFile)
         localDataFile.close()
+        logging.info('local file loaded: '+fileName)
         return data
 
 def createSystemInfluceList(systems):
@@ -118,16 +118,15 @@ def countFactionSystems(factions):
 def getData(file,url):
         if os.path.isfile(file):
                 data = readLocalData(file)
-                logging.info('local file loaded: '+file)
         else:
-                data = getDataFromEDDB(url,file)
-                logging.info('local file loaded: '+file)
+                getDataFromEDDB(url,file)
+                data = readLocalData(file)
         return data
 
 
-def convertListToDict(list):
+def convertListToDict(localList):
         dictionary = {}
-        for l in list:
+        for l in localList:
                 id = l['id']
                 dictionary[id] = l
         return dictionary
