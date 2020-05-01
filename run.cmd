@@ -1,1 +1,1 @@
-D:\home\Python38\python.exe expansionbot.py 
+python expansionbot.py 
