@@ -5,12 +5,12 @@ import math
 import configparser
 import importlib
 import os.path
-from numpy import array,zeros,c_
+# from numpy import array,zeros,c_
 from datetime import date,timedelta,datetime
 from pathlib import Path
-from scipy.stats.stats import pearsonr
-from matplotlib import pyplot
-from pprint import pprint
+# from scipy.stats.stats import pearsonr
+# from matplotlib import pyplot
+# from pprint import pprint
 import logging
 
 def getDataFromEDDB(url, file):
