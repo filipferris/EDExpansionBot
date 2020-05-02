@@ -4,12 +4,16 @@ import factionData
 import findExpandingSystems
 from pprint import pformat
 from discord.ext import commands
-
-expansionBotApp = Flask(__name__)
+from flask import Flask
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TESTBOT_TOKEN')
 
+testBotApp = Flask(__name__)
+
+@testBotApp.route("/")
+def testBot():
+    return "TestBot is up and running"
 
 bot = commands.Bot(command_prefix='#',case_insensitive=True)
 
